@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    padding: 0%;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.header h1{
+font-family: sans-serif;
+font-weight: bold;
+font-size: 80px;
+color: ghostwhite;
+background-color:black;
+padding: 10px 20px;
+border-radius: 15px;
+
+}
+#counter{
+    display: flex;
+    flex-direction: column;
+font-family: sans-serif;
+font-weight: bold;
+font-size: 80px;
+}
+.ui{
+    margin-top: 10px;
+}
+.ui button{
+   width: 200px;
+   height: 60px;
+   margin-right: 5px;
+   border-radius: 30px;
+   border-width: 5px;
+}
+#incrementBtn{
+    background-color: green;
+}
+#decrementBtn{
+    background-color: red;
+}
+
