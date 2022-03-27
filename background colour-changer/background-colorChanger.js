@@ -1,6 +1,5 @@
 let bodycol = document.getElementsByTagName("body")
 
 function backgroundChangercolor(event) {
-
-bodycol.style.backgroundColor = event.target.value
+bodycol[0].style.backgroundColor = event.target.value;
 }

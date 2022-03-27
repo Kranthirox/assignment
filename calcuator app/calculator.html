@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./calculator.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="calBody">
+            <div class="header">
+                <h1>Calculator App</h1>
+                <form name="calculator">
+                    <div id="input1">
+                        <label for="numberInput1">NUMBER-1:</label>
+                        <input type="number" name="numberInput1" id="numberInput1" required>
+                    </div>
+                    <div id="input2">   
+                        <label for="numberInput2">NUMBER-2:
+                        <input type="number" name="numberInput2" id="numberInput2" required>
+                    </label>
+                    </div>
+                    <div id="result">
+                        <label for="result" >RESULT:</label>
+                            <input type="number" id="result">
+                    </div>
+
+                            <div class="arthematic operators">
+                               <input type="submit" id="add" value="calculate" onclick="sum()">
+                            </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="./calculator.js"></script>
+</body>
+
+</html>

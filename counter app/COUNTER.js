@@ -11,6 +11,7 @@ function decrement() {
   checkForColor();
 }
 function zero() {
+  counter.textContent = 0
   count = 0;
   counter.innerHTML = count;
   checkForColor();
