@@ -27,9 +27,19 @@
     height: 37px;
     padding: 2%;
     border-radius: 10px;
+    font-size: large;
+   font-weight: bolder;
 }
 .add{
     background-color: green;
     width: 50px;
-
+}
+.sub{
+    background-color: red;
+}
+.div{
+    background-color: yellow;
+}
+.multi{
+    background-color: blueviolet;
 }
