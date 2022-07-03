@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <h2 id="view">JavaScript For Loop</h2>
+    <div class="container">
+
+    </div>
+    <script>
+      const cities = [
+        "New York",
+        "Tokyo",
+        "Berlin",
+        "Shanghai",
+        "London",
+        "Helsinki",
+        "Oslo",
+        "delhi",
+        "Stockholm",
+        "Tallinn",
+      ];
+      function myFun(cities) {
+        let item = "";
+        for (let i = 0; i < cities.length; i++){
+         let item += `<h1>${cities[i]}</h1>`;
+         
+        } 
+        return item;
+        document.querySelector(".container").innerHTML=`
+      <div class='frz'>
+        ${myFun(cities)}
+        </div>
+      `;
+      }
+
+    </script>
+  </body>
+</html>

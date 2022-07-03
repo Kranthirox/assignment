@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+  
+
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="header">
+      <p>todo list</p>
+      <div class="AddTodo"><span><button class="btn" onclick="addtodo()">+</button></span><input type="text" id="AddInput"  placeholder="Add to Remember" required></div>
+    </div>
+    <div class="todoList">
+      <ul id="list-Body">
+
+      </ul>
+    </div>
+
+  </div>
+  <script>
+    var todoList = [
+   
+    ];
+    let listBody = document.getElementById('list-Body');
+    function paintUI(){
+      document.getElementById("list-Body").innerHTML = "";
+    for (i = 0; i < todoList.length; i++) {
+      
+      let list = todoList[i];
+      let elem = document.createElement('li');
+
+      let btn=document.createElement("button");
+      btn.onclick =remove;
+      btn.className = "Btn2"
+      btn.innerHTML = "x";
+
+      let check = document.createElement()
+
+
+      let listBody = document.getElementById('list-Body');
+      elem.innerHTML = list.todoText;
+      
+
+      listBody.appendChild(elem);
+      elem.appendChild(btn);
+    }
+  }
+
+    function remove(){
+      let listBody = document.getElementById('list-Body')
+      listBody.removeChild(this.parentNode)
+    }
+    function addtodo(){
+      document.getElementById("list-Body").innerHTML = "";
+      let listBody = document.getElementById('list-Body');
+     let add  = document.getElementById("AddInput").value; 
+     todoList.push({todoText:add});
+     console.log(add);
+     let entered = add;
+     paintUI();
+    }
+    paintUI();
+
+    function oncheck() {
+        if (this.checked) {
+          this.parentNode.style.color = "green";
+          this.parentNode.style.textDecoration='line-through'
+
+        } else {
+          this.parentNode.style.color = "black";
+          this.parentNode.style.textDecoration='none'
+
+        }
+      }
+  </script>
+</body>
+
+</html> 

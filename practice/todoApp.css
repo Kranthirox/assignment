@@ -1,0 +1,55 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    margin: auto 40% ;
+    margin-top: 10%;
+}
+.header{
+    font-size: 30px;
+    text-align: center;
+}
+.AddTodo{
+    display: flex;
+    flex-direction: row;
+
+}
+li{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    background-color: rgb(206, 206, 206);
+    margin-top: 10px;
+    padding: 7px;
+    text-align: center;
+    border-radius: 10px ;
+    user-select: none;
+    overflow:hidden;
+    
+}
+ul{
+    padding: 0;
+}
+ul :hover {
+    background-color: rgb(218, 218, 218);
+    transform: scale(1.5);
+    transition: 200ms;
+    
+}
+.btn{
+    margin: 10px 10px;
+    border-radius: 30px;
+    background-color: green;
+    height: 40px;
+    width: 40px;
+
+    
+}
+#AddInput{
+    border-radius: 10px;
+    width: 80%;
+    height: auto;
+}
+.Btn2{
+    align-items: flex-end;
+  
+}

@@ -1,0 +1,11 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "posting news",
+  "main": "main.js",
+  "scripts": {
+    "devStart": "nodemon main.js"
+  },
+  "author": "kranthi",
+  "license": "ISC"
+}

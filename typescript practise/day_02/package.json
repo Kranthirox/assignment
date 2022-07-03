@@ -1,0 +1,17 @@
+{
+  "name": "jsonpackage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sever.js",
+  "scripts": {
+    "devStart":"nodemon sever.js"
+  },
+  "author": "kranthi",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}

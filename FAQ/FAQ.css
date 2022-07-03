@@ -1,0 +1,21 @@
+.container{
+    width: 50%;
+    margin: 100px auto 0px auto;
+    background-color:rgb(241, 241, 241);
+    font-family: sans-serif;
+   text-align: center;
+   font-size: 20px;
+}
+.question{
+    display: flex;
+    background-color: #999;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    justify-content: space-between;
+    cursor: pointer;
+    user-select: none;
+}
+.answer{
+    display: none;
+}

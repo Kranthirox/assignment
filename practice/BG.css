@@ -1,0 +1,14 @@
+.btn{
+    all:unset;
+    background-color: rgb(228, 216, 216);
+    padding: 15px 30px;
+    border-radius: 30px;
+}
+
+
+.btn:hover{
+    background-color: rgb(48, 44, 44);
+    color: white;
+ 
+    user-select: none;
+}

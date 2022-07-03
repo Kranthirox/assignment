@@ -1,0 +1,38 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    height: 100%;
+    margin: 5% 30%;
+   background: rgb(202, 202, 202);
+  border-radius: 15px;
+}
+.inputs{
+    display: flex;
+    flex-direction: row;
+    padding: 10px 20px; 
+}
+li {
+    list-style: none;
+    padding: 10px 20px; 
+    background: rgb(217, 214, 214);
+    overflow: hidden;
+    max-width: 400px;
+    max-height: ;
+    
+}
+span{
+    padding: 10px 70px;
+    margin: 10px;
+    background: linear-gradient(45deg, rgb(239, 237, 237) );
+    border-radius: 25px;
+}
+#list{
+   margin: 10px;
+   
+}

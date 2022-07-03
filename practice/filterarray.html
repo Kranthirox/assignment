@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="Order">
+      <p id="sub"></p>
+    </div>
+    <script>
+      var dishes = [
+        { Name: "dosa", catagory: 'breakfast' },
+        { Name: "idle", catagory: 'breakfast' },
+        { Name: "chickin curry", catagory: 'dinner'},
+        { Name: "rice", catagory: 'lunch'},
+        { Name: "chickin curry", catagory: 'dinner'},
+        { Name: "dhal", catagory: 'lunch'}
+      ] 
+
+      const item = dishes
+      .filter(dish => dish.catagory == 'dinner' )
+      .map(dish => ({hotelMenu:dish}));
+      console.log(item)
+      
+
+      /*for(i =0;i<= myStr.length;i++){
+let sub = document.getElementById("sub")
+     let list = myStr[i]
+     sub.innerHTML += list.todoText;
+}*/
+    </script>
+  </body>
+</html>

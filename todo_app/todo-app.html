@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Todo App</title>
+  </head>
+  <body>
+  <div class="container">
+    <div class="inputs"> 
+      <div id="box"><input type="text" id="todo" placeholder="Enter a todo text" /></div>
+      <div id="AddBtn"><button onclick="addTodo()">add</button></div>
+  </div>
+    
+    
+    <ul id="list"></ul>
+  </div>
+
+    <script>
+      var listElem = document.getElementById("list");
+      function addTodo() {
+        var todoText = document.getElementById("todo").value;
+        console.log(todoText)
+        var spanElem = document.createElement("span");
+        spanElem.innerHTML += todoText;
+
+        var checkInp = document.createElement("input");
+        checkInp.setAttribute("type", "checkbox");
+        checkInp.onclick = oncheck;
+
+        var removebtn = document.createElement("button");
+        removebtn.innerHTML="remove";
+        removebtn.onclick = remfun;
+
+        var li = document.createElement("li");
+        li.appendChild(checkInp);
+        li.appendChild(spanElem);
+        li.appendChild(removebtn);
+
+        listElem.appendChild(li);
+      }
+
+      
+
+      function remfun(){
+       
+         listElem.removeChild(this.parentNode)
+      }
+      
+      function oncheck() {
+        if (this.checked) {
+          this.parentNode.style.color = "green";
+          this.parentNode.style.textDecoration='line-through'
+
+        } else {
+          this.parentNode.style.color = "black";
+          this.parentNode.style.textDecoration='none'
+
+        }
+    }
+    </script>
+  </body>
+</html>

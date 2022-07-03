@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>todo list</h1>
+<input id="todoText" type="text">
+<button onclick="todoAdd()">add</button>
+<ul id="list"></ul>
+<script>
+var listBody =document.getElementById("list")
+console.log(listBody)
+function todoAdd(){
+    var li = document.createElement("li");
+
+
+    let todoText = document.getElementById("todoText").value;
+    let spanItem =document.createElement("span");
+    spanItem.innerHTML = todoText;
+
+
+  let reMobtn = document.createElement("button");
+  reMobtn.innerHTML="X";
+  reMobtn.onclick = deletefun;
+
+
+  var checkTodo = document.createElement("input");
+        checkTodo.setAttribute("type", "checkbox");
+        checkTodo.onclick = oncheck;
+
+    li.appendChild(checkTodo);
+    li.appendChild(spanItem);
+    li.appendChild(reMobtn);
+    listBody.appendChild(li);
+    
+}
+function deletefun() {
+    listBody.removeChild(this.parentNode)
+}
+function oncheck(){
+    if(this.checked){
+        this.parentNode.style.color = "red";
+        this.parentNode.style.textDecoration = "line-through";
+
+    }
+    else{
+      this.parentNode.style.color = "black";
+      this.parentNode.style.textDecoration = "none";
+
+    }
+}
+
+
+</script>
+</body>
+</html>
