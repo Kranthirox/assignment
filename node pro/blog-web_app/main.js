@@ -8,13 +8,17 @@ const router = require("./routes");
 const flash = require("connect-flash");
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
+const postController =require("./CONTROLLERS/ctrls");
 
 db.connect();
-app.use("/", router);
+
+
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
+app.set("view engine", "ejs");
+app.use("/", router);
+app.use("/posts",router)
 
 app.use(
   session({
@@ -26,7 +30,8 @@ app.use(
 app.use(cookieParser("secretStringForCookies"));
 app.use(flash());
 
-app.set("view engine", "ejs");
+
+
 
 app.listen(port, () => {
   "server is connected";

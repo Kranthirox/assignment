@@ -8,13 +8,15 @@ const session = require('express-session')
 
 
 
+
 router.post("/",postController.PostNews)
 
 router.get("/home",postController.viewPost)
 
 router.get("/addpost",postController.createPost)
 
-router.get("/home/:id", postController.deletePost);
+router.get("/del/:id",postController.deletePost);
+router.get("update/:id",postController.updatePost)
 
 
 
