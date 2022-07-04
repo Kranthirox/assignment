@@ -3,9 +3,9 @@
     <%- include("header") %> 
 <body>
     
-    <div class="container">
+    <div class="row">
         <h1>add post </h1>
-        <form method="post" enctype="multipart/form-data" action="/allpost">
+        <form method="post"  action="/">
             
             <div class="mb-3">
               <label for="title" class="form-label">title</label>
@@ -22,9 +22,7 @@
                 <input type="text" class="form-control" id="author" name="author">
               </div>
 
-              <div class="custom-file mb-3">
-                <input type="file" name="myImage" accept="image/*">
-              </div>
+
 
               <div class="mb-3">
                 <select class="form-select" aria-label="Default select example" name="catagory">

@@ -2,13 +2,10 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const PostSchema = new Schema({
-  title: {type:String,required:true},
+  
+  title: {type:String,unique:true,required:true},
   body: {type:String,required:true},
   author: {type:String,required:true},
-  img:{
-    data: Buffer,
-    contentType: String
-   },
   catagory:{
   type:String,
   required:true,
