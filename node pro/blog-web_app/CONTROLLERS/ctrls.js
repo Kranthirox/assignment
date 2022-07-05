@@ -1,11 +1,5 @@
 const Post = require("../postModel");
-const path = require("path");
-const router = require("../routes");
 const { v4: uuidv4 } = require("uuid");
-const { Console } = require("console");
-const { response } = require("express");
-const flash = require("connect-flash");
-const session = require("express-session");
 
 exports.viewPost = async (req, res) => {
   const response = await Post.find({});
@@ -29,14 +23,22 @@ exports.deletePost = async (req, res) => {
   res.redirect("/home");
 };
 
+exports.updatePage = async (req, res) => {
+    res.render("update-post");
+  };
 exports.updatePost = async (req, res) => {
   try {
-    const id = req.params.id;
+    const id = req.params["id"];
     const update = req.body;
     const options = { new: true };
-    const result = await Posts.findByIdAndUpdate(id, update, options);
-    res.send(result);
+    const result = await Post.findById(id);
+    this.updatePage={ data: result }
+   
+    res.redirect("update-post")
+    
+    
   } catch (error) {
     res.status(404).send({ error: "Post not found and can't be updated" });
   }
 };
+
