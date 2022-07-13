@@ -1,8 +1,11 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const Joi = require('joi')
+const { v4: uuidv4 } = require('uuid');
+
 
 const PostSchema = new Schema({
-  id:{type:String,unique:true,required:true},
+  id:{type:String,unique:true,required:true,unique:uuidv4 },
   title: {type:String,required:true},
   body: {type:String,required:true},
   author: {type:String,required:true},
@@ -10,6 +13,7 @@ const PostSchema = new Schema({
   type:String,
   required:true,
   enum:[
+    
     "Business",
     "Cars",
     "Entertainment",
@@ -32,4 +36,7 @@ const PostSchema = new Schema({
   }
 });
 
-module.exports = PostSchema;
+module.exports=PostSchema
+
+
+

@@ -1,5 +1,8 @@
 const Post = require("../postModel");
 const { v4: uuidv4 } = require("uuid");
+const { findByIdAndUpdate } = require("../postModel");
+const mongoose = require("mongoose");
+const User = require("../userModel");
 
 exports.viewPost = async (req, res) => {
   const response = await Post.find({});
@@ -22,23 +25,28 @@ exports.deletePost = async (req, res) => {
   const response = await Post.deleteOne({ id });
   res.redirect("/home");
 };
+exports.updatePage = async (req, res) => {
+  res.render("update-post");
+};
 
 exports.updatePage = async (req, res) => {
-    res.render("update-post");
-  };
-exports.updatePost = async (req, res) => {
-  try {
-    const id = req.params["id"];
-    const update = req.body;
-    const options = { new: true };
-    const result = await Post.findById(id);
-    this.updatePage={ data: result }
-   
-    res.redirect("update-post")
-    
-    
-  } catch (error) {
-    res.status(404).send({ error: "Post not found and can't be updated" });
-  }
+  const id = req.params["id"];
+  const result = await Post.find({ id });
+  console.log(result);
+  res.render("update-post", { data: result });
 };
+exports.updatePost = async (req, res) => {
+  const id = req.params["id"];
+  const update = req.body;
+  const result = Post.findOneAndReplace({ id }, update);
+  console.log(result);
+  res.redirect("/home");
+};
+exports.userPage = async (req, res) => {
+const newpost = new User(req.body)
+console.log(newpost)
+};
+
+
+
 
