@@ -4,6 +4,9 @@ const { findByIdAndUpdate } = require("../postModel");
 const mongoose = require("mongoose");
 const User = require("../userModel");
 const _ = require('lodash')
+const bcrypt =require ('bcrypt')
+
+
 
 exports.viewPost = async (req, res) => {
   const response = await Post.find({});
@@ -55,6 +58,9 @@ exports.userPage = async (req, res) => {
     contact:req.body.contact,
     DOB:req.body.DOB
    })
+
+const salt = await bcrypt.genSalt(10);
+person.password =  await bcrypt.hash(person.password,salt)
   await person.save();
  
   await res.send( _.pick(person,['username','email','contact']));

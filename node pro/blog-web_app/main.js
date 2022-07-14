@@ -16,6 +16,8 @@ app.use("/", router);
 app.use("/posts",router)
 app.use("/up",router)
 app.use('/user',router)
+app.use("/auth",router)
+
 
 
 
