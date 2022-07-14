@@ -3,6 +3,7 @@ const { v4: uuidv4 } = require("uuid");
 const { findByIdAndUpdate } = require("../postModel");
 const mongoose = require("mongoose");
 const User = require("../userModel");
+const _ = require('lodash')
 
 exports.viewPost = async (req, res) => {
   const response = await Post.find({});
@@ -43,9 +44,25 @@ exports.updatePost = async (req, res) => {
   res.redirect("/home");
 };
 exports.userPage = async (req, res) => {
-const newpost = new User(req.body)
-console.log(newpost)
-};
+  let person = await User.findOne({email:req.body.email})
+   if(person) return res.send("already resgisted")
+  
+   person = new User({
+    id:uuidv4(),
+    username:req.body.username,
+    email:req.body.email,
+    password:req.body.password,
+    contact:req.body.contact,
+    DOB:req.body.DOB
+   })
+  await person.save();
+ 
+  await res.send( _.pick(person,['username','email','contact']));
+ 
+
+ }
+
+
 
 
 
