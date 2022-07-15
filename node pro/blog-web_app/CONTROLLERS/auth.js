@@ -7,6 +7,16 @@ const _ = require("lodash");
 const bcrypt = require("bcrypt");
 const Joi = require("joi")
 
+
+// function validate(req){
+//     const schema =Joi.object({
+//       email:Joi.string().min(5).max(255).required(),
+//       password:Joi.string().min(5).max(1024).required()
+//     })
+//     return schema.validate(req);
+//   }
+
+
 exports.viewPost = async (req, res) => {
   const response = await Post.find({});
   res.render("home", { data: response });
@@ -47,17 +57,13 @@ exports.updatePost = async (req, res) => {
 };
 exports.userPage = async (req, res) => {
   let person = await User.findOne({ email: req.body.email });
-  if (person) return res.send("already resgisted");
+  if (!person) return res.send("Incorrect email or password!");
  
   const validPassword=await bcrypt.compare(req.body.password,person.password)
   if (!validPassword) return res.send("Incorrect email or password!");
-  res.send("true")
+  res.send("you have been sighed into your account"+" "+person.username+' ')
 };
-function validate(req){
-  const schema =Joi.object({
-    email:Joi.string().min(5).max(255).required(),
-    password:Joi.string().min(5).max(1024).required()
-  })
-  return schema.validate(req);
-}
+
+
+
 
